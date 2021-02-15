@@ -5,5 +5,11 @@ dependencies:
 - name: rabbitmq
   repository: https://charts.bitnami.com/bitnami
   version: 8.6.4
-digest: sha256:cfc8843ecdfedb0c78a0ca9a474860b250590c79c8412ef71f06ea666b5279ae
-generated: "2021-01-19T22:15:56.294952-05:00"
+- name: user-service
+  repository: https://ikenom.github.io/user-service
+  version: 0.0.17
+- name: shopify-service
+  repository: https://ikenom.github.io/shopify-service
+  version: 0.0.17
+digest: sha256:30696adbd09865e3a0ec8f2c9a98307d43bce4a0928d01bca779210299db0711
+generated: "2021-02-15T14:43:32.618956-05:00"

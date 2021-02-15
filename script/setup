@@ -9,3 +9,5 @@ kubectl create secret docker-registry ikenom-gh-reg \
     --namespace $CLUSTER_NAMESPACE
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add ikenom-contentful-service https://ikenom.github.io/contentful-service/
+helm repo add ikenom-shopify-service https://ikenom.github.io/shopify-service/

@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "user-service.fullname" . }}-sneaker
+  name: {{ include "ecommerce-orchestrator.fullname" . }}-sneaker
   labels:
-    {{- include "user-service.labels" . | nindent 4 }}
+    {{- include "ecommerce-orchestrator.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "user-service.fullname" . }}-sneaker
+    name: {{ include "ecommerce-orchestrator.fullname" . }}-sneaker
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
