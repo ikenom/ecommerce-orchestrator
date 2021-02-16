@@ -6,7 +6,7 @@ class UserVendorCreatedConsumer
   queue_name "consumer_ecommerce_orchestrator_user_vendor_created"
 
   def process(message)
-    CreateShopifyVendorJob.perform_later(
+    CreateVendorJob.perform_later(
       user_id: message[:user_id],
       first_name: message[:first_name],
       last_name: message[:last_name],
