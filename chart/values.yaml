@@ -94,11 +94,15 @@ rabbitmq:
 user-service:
   rabbitmq:
     enabled: false
+  mongodb:
+    enabled: false
   firebase:
     api_key: AIzaSyAX6dyB5TKhUB8RUu7LoxD55HGBtTkO5Gk
 
 shopify-service:
   rabbitmq:
+    enabled: false
+  mongodb:
     enabled: false
   shopify:
     api_key: ed1584a9ec553286ed5064d91bc81ecc
