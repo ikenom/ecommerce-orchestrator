@@ -2,8 +2,8 @@
 
 class UserVendorCreatedConsumer
   include Hutch::Consumer
-  consume "user.vendor.create"
-  queue_name "consumer_ecommerce_orchestrator_user_vendor_create"
+  consume "user.vendor.created"
+  queue_name "consumer_ecommerce_orchestrator_user_vendor_created"
 
   def process(message)
     CreateVendorJob.perform_later(
