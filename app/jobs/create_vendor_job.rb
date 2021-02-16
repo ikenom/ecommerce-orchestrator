@@ -1,4 +1,4 @@
-class CreateShopifyVendorJob < ApplicationJob
+class CreateVendorJob < ApplicationJob
   queue_as :ecommerce_orchestrator_create_vendor
 
   def perform(user_id:, first_name:, last_name:, business_name:, email:, phone:)
