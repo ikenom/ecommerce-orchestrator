@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserVendorCreatedConsumer
+class CmsProductCreatedConsumer
   include Hutch::Consumer
   consume "user.vendor.created"
   queue_name "consumer_ecommerce_orchestrator_cms_product_created"
