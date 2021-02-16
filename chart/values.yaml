@@ -92,10 +92,14 @@ rabbitmq:
     erlangCookie: d
 
 user-service:
+  rabbitmq:
+    enabled: false
   firebase:
     api_key: AIzaSyAX6dyB5TKhUB8RUu7LoxD55HGBtTkO5Gk
 
 shopify-service:
+  rabbitmq:
+    enabled: false
   shopify:
     api_key: ed1584a9ec553286ed5064d91bc81ecc
     api_password: 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
