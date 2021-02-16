@@ -2,8 +2,8 @@
 
 class CmsProductCreatedConsumer
   include Hutch::Consumer
-  consume "user.vendor.created"
-  queue_name "consumer_ecommerce_orchestrator_cms_product_created"
+  consume "user.vendor.create"
+  queue_name "consumer_ecommerce_orchestrator_cms_product_create"
 
   def process(message)
 
