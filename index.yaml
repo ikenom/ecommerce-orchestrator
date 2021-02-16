@@ -2,6 +2,35 @@ apiVersion: v1
 entries:
   ecommerce-orchestrator:
   - apiVersion: v2
+    appVersion: 2c153d0a38163491d9cbe53f65d0d0746aae70ce
+    created: "2021-02-16T01:03:41.820665295Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - mongodb
+      version: ~10.3.6
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - rabbitmq
+      version: ~8.6.3
+    - name: user-service
+      repository: https://ikenom.github.io/user-service
+      version: ~0.0.15
+    - name: shopify-service
+      repository: https://ikenom.github.io/shopify-service
+      version: ~0.0.1
+    description: A Helm chart for Kubernetes
+    digest: ea0457d386eb9066db6045427bbc6dc7c233bf1de26b757b7a361facbe76fb81
+    name: ecommerce-orchestrator
+    type: application
+    urls:
+    - https://github.com/ikenom/ecommerce-orchestrator/releases/download/ecommerce-orchestrator-0.0.12/ecommerce-orchestrator-0.0.12.tgz
+    version: 0.0.12
+  - apiVersion: v2
     appVersion: 0ab167f3274f0fc8d2410be3ae8287a8a41ff978
     created: "2021-02-16T00:53:18.928964436Z"
     dependencies:
