@@ -5,4 +5,6 @@ class Product
   field :shopify_id, type: String
 
   belongs_to :vendor
+
+  validates :shopify_id, presence: true
 end

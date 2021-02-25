@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :vendor, class: Vendor do
+  factory :vendor do
     business_name { Faker::Company.name }
     phone { Faker::PhoneNumber.cell_phone }
     first_name { Faker::Name.first_name }
