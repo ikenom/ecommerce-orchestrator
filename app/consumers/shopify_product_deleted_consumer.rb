@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ShopifyProductCreatedConsumer
+class ShopifyProductDeletedConsumer
   include Hutch::Consumer
   consume "shopify.product.deleted"
   queue_name "consumer_ecommerce_orchestrator_shopify_product_deleted"

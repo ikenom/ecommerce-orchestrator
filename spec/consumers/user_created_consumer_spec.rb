@@ -15,7 +15,7 @@ RSpec.describe UserCreatedConsumer do
   end
 
   it "should have correct queue name" do
-    expect(UserCreatedConsumer.get_queue_name).to eq("consumer_ecommerce_orchestrator_user_created")
+    expect(described_class.get_queue_name).to eq("consumer_ecommerce_orchestrator_user_created")
   end
 
   it "should enqueue user created job" do

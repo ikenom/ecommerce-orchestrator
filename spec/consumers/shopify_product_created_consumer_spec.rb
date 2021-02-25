@@ -20,7 +20,7 @@ RSpec.describe ShopifyProductCreatedConsumer do
 
   it "should enqueue shopify product created job" do
     consumer.process(message)
-    expect(ShopifyProductCreatedJob).to have_been_enqueued.with({
+    expect(described_class).to have_been_enqueued.with({
                                                         product_id: message[:sender_id],
                                                         shopify_id: message[:shopify_id]
                                                       })
