@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :vendor do
+    shopify_id { Faker::Alphanumeric.alpha }
     business_name { Faker::Company.name }
     phone { Faker::PhoneNumber.cell_phone }
     first_name { Faker::Name.first_name }

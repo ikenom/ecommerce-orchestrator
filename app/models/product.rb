@@ -6,5 +6,5 @@ class Product
 
   belongs_to :vendor
 
-  validates :shopify_id, presence: true
+  validates :cms_id, presence: true
 end
