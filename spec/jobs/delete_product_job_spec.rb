@@ -3,9 +3,9 @@
 RSpec.describe DeleteProductJob, type: :job do
   let(:product) { create(:product) }
 
-  subject(:perform) {
+  subject(:perform) do
     described_class.perform_now(cms_id: product.cms_id)
-  }
+  end
 
   before(:each) do
     ActiveJob::Base.queue_adapter = :test
@@ -15,7 +15,7 @@ RSpec.describe DeleteProductJob, type: :job do
     perform
     product = Product.last
     expect(DeleteShopifyProductJob).to have_been_enqueued.with({
-                                                           product_id: product.id.to_s,
-                                                         })
+                                                                 product_id: product.id.to_s,
+                                                               })
   end
 end

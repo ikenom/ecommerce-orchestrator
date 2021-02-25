@@ -2,15 +2,17 @@
 
 RSpec.describe UpdateShopifyProductJob, type: :job do
   let(:product) { create(:product) }
-  let(:name) { Faker::Name.name }
+  let(:name) { Faker::Restaurant.name }
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
   let(:tags) { [] }
 
-  subject(:perform) {
+  subject(:perform) do
     described_class.perform_now(
       product_id: product.id.to_s,
       name: name,
-      price: price) }
+      price: price
+    )
+  end
 
   before(:each) do
     allow(Hutch).to receive(:connect)
@@ -21,9 +23,9 @@ RSpec.describe UpdateShopifyProductJob, type: :job do
     expect(Hutch).to receive(:publish).with("shopify.product.update", {
                                               sender_id: product.id.to_s,
                                               product_id: product.shopify_id,
-      product_name: name,
-      price: price,
-      tags: tags
+                                              product_name: name,
+                                              price: price,
+                                              tags: tags
                                             }).exactly(1)
 
     perform

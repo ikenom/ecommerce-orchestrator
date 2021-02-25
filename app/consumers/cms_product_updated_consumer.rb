@@ -9,7 +9,7 @@ class CmsProductUpdatedConsumer
     UpdateProductJob.perform_later(
       cms_id: message[:cms_id],
       name: message[:name],
-      price: message[:price],
+      price: message[:price]
     )
   end
 end

@@ -19,6 +19,6 @@ RSpec.describe CmsProductDeletedConsumer do
 
   it "should enqueue shopify product created job" do
     consumer.process(message)
-    expect(DeleteProductJob).to have_been_enqueued.with({cms_id: message[:cms_id]})
+    expect(DeleteProductJob).to have_been_enqueued.with({ cms_id: message[:cms_id] })
   end
 end

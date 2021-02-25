@@ -20,7 +20,7 @@ RSpec.describe ShopifyProductDeletedConsumer do
   it "should enqueue shopify product created job" do
     consumer.process(message)
     expect(ShopifyProductDeletedJob).to have_been_enqueued.with({
-                                                        product_id: message[:sender_id],
-                                                      })
+                                                                  product_id: message[:sender_id],
+                                                                })
   end
 end

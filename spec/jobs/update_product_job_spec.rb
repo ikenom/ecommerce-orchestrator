@@ -2,15 +2,16 @@
 
 RSpec.describe UpdateProductJob, type: :job do
   let(:product) { create(:product) }
-  let(:name) { Faker::Name.name }
+  let(:name) { Faker::Restaurant.name }
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
 
-  subject(:perform) {
+  subject(:perform) do
     described_class.perform_now(
       cms_id: product.cms_id,
       price: price,
-      name: name)
-  }
+      name: name
+    )
+  end
 
   before(:each) do
     ActiveJob::Base.queue_adapter = :test
@@ -20,9 +21,9 @@ RSpec.describe UpdateProductJob, type: :job do
     perform
     product = Product.last
     expect(UpdateShopifyProductJob).to have_been_enqueued.with({
-                                                           product_id: product.id.to_s,
-                                                           price: price,
-      name: name,
-                                                         })
+                                                                 product_id: product.id.to_s,
+                                                                 price: price,
+                                                                 name: name,
+                                                               })
   end
 end

@@ -4,9 +4,9 @@ RSpec.describe CmsProductCreatedConsumer do
   let(:message) do
     {
       cms_id: Faker::Alphanumeric.alpha,
-      name: Faker::Name.name,
+      name: Faker::Restaurant.name,
       price: Faker::Commerce.price(range: 0..10.0, as_string: true),
-      type: "Product"
+      type: Faker::Restaurant.type
     }
   end
 
@@ -23,10 +23,10 @@ RSpec.describe CmsProductCreatedConsumer do
   it "should enqueue shopify product created job" do
     consumer.process(message)
     expect(CreateProductJob).to have_been_enqueued.with({
-      cms_id: message[:cms_id],
-      name: message[:name],
-      price: message[:price],
-      type: message[:type]
-                                                      })
+                                                          cms_id: message[:cms_id],
+                                                          name: message[:name],
+                                                          price: message[:price],
+                                                          type: message[:type]
+                                                        })
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateProductJob < ApplicationJob
   queue_as :ecommerce_orchestrator_update_product
 
@@ -7,7 +9,7 @@ class UpdateProductJob < ApplicationJob
     UpdateShopifyProductJob.perform_later(
       product_id: product.id.to_s,
       name: name,
-      price: price,
+      price: price
     )
   end
 end

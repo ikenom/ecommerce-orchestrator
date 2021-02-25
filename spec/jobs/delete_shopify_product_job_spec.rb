@@ -3,8 +3,9 @@
 RSpec.describe DeleteShopifyProductJob, type: :job do
   let(:product) { create(:product) }
 
-  subject(:perform) {
-    described_class.perform_now(product_id: product.id.to_s) }
+  subject(:perform) do
+    described_class.perform_now(product_id: product.id.to_s)
+  end
 
   before(:each) do
     allow(Hutch).to receive(:connect)

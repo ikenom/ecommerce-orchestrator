@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DeleteProductJob < ApplicationJob
   queue_as :ecommerce_orchestrator_delete_product
 

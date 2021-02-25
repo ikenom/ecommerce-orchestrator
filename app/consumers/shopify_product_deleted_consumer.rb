@@ -7,7 +7,7 @@ class ShopifyProductDeletedConsumer
 
   def process(message)
     ShopifyProductDeletedJob.perform_later(
-      product_id: message[:sender_id],
+      product_id: message[:sender_id]
     )
   end
 end

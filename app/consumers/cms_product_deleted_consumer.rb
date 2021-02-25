@@ -7,7 +7,7 @@ class CmsProductDeletedConsumer
 
   def process(message)
     DeleteProductJob.perform_later(
-      cms_id: message[:cms_id],
+      cms_id: message[:cms_id]
     )
   end
 end
