@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
-class CmsProductCreatedConsumer
+class CmsProductUpdatedConsumer
   include Hutch::Consumer
   consume "cms.product.updated"
   queue_name "consumer_ecommerce_orchestrator_cms_product_updated"
 
   def process(message)
-    CreateShopifyProductJob.perform_later(
+    UpdateProductJob.perform_later(
       cms_id: message[:cms_id],
-      name: message[:product][:name],
-      price: message[:product][:price],
-      type: message[:product_type],
+      name: message[:name],
+      price: message[:price],
     )
   end
 end

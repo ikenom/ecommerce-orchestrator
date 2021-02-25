@@ -15,12 +15,12 @@ RSpec.describe ShopifyProductCreatedConsumer do
   end
 
   it "should have correct queue name" do
-    expect(ShopifyProductCreatedConsumer.get_queue_name).to eq("consumer_ecommerce_orchestrator_shopify_product_created")
+    expect(described_class.get_queue_name).to eq("consumer_ecommerce_orchestrator_shopify_product_created")
   end
 
   it "should enqueue shopify product created job" do
     consumer.process(message)
-    expect(described_class).to have_been_enqueued.with({
+    expect(ShopifyProductCreatedJob).to have_been_enqueued.with({
                                                         product_id: message[:sender_id],
                                                         shopify_id: message[:shopify_id]
                                                       })
