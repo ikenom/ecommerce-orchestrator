@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateUserJob < ApplicationJob
   queue_as :ecommerce_orchestrator_create_user
 

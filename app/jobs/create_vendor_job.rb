@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateVendorJob < ApplicationJob
   queue_as :ecommerce_orchestrator_create_vendor
 

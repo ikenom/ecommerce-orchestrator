@@ -19,9 +19,9 @@ RSpec.describe CreateUserJob, type: :job do
     perform
     user = User.last
     expect(CreateAuthUserJob).to have_been_enqueued.with({
-      user_id: user.id.to_s,
-      password: password,
-      display_name: display_name
-    })
+                                                           user_id: user.id.to_s,
+                                                           password: password,
+                                                           display_name: display_name
+                                                         })
   end
 end

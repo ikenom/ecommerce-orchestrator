@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAuthUserJob < ApplicationJob
   queue_as :ecommerce_orchestrator_create_auth_user
 
@@ -6,9 +8,9 @@ class CreateAuthUserJob < ApplicationJob
 
     user = User.find(user_id)
     Hutch.publish("user.create",
-      sender_id: user.id.to_s,
-      email: user.email,
-      password: password,
-      display_name: display_name)
+                  sender_id: user.id.to_s,
+                  email: user.email,
+                  password: password,
+                  display_name: display_name)
   end
 end

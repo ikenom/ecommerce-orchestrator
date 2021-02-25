@@ -14,11 +14,11 @@ RSpec.describe CreateAuthUserJob, type: :job do
 
   it "should publish" do
     expect(Hutch).to receive(:publish).with("user.create", {
-      sender_id: user.id.to_s,
-      email: user.email,
-      password: password,
-      display_name: display_name
-    }).exactly(1)
+                                              sender_id: user.id.to_s,
+                                              email: user.email,
+                                              password: password,
+                                              display_name: display_name
+                                            }).exactly(1)
 
     perform
   end
