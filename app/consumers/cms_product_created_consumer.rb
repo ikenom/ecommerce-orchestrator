@@ -7,7 +7,7 @@ class CmsProductCreatedConsumer
 
   def process(message)
     CreateShopifyProductJob.perform_later(
-      user_id: message[:product][:owner_id],
+      cms_id: message[:cms_id],
       name: message[:product][:name],
       price: message[:product][:price],
       type: message[:product_type],
