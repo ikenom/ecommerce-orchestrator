@@ -2,7 +2,7 @@
 
 RSpec.describe UpdateProductJob, type: :job do
   let(:product) { create(:product) }
-  let(:name) { Faker::Restaurant.name }
+  let(:name) { Faker::Food.dish }
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
 
   subject(:perform) do

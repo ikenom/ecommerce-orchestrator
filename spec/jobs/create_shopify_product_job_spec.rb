@@ -3,7 +3,7 @@
 RSpec.describe CreateShopifyProductJob, type: :job do
   let(:product) { create(:product) }
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
-  let(:name) { Faker::Restaurant.name }
+  let(:name) { Faker::Food.dish }
   let(:type) { Faker::Restaurant.type }
   let(:tags) { [] }
 

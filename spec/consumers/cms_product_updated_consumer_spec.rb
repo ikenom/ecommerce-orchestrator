@@ -4,7 +4,7 @@ RSpec.describe CmsProductUpdatedConsumer do
   let(:message) do
     {
       cms_id: Faker::Alphanumeric.alpha,
-      name: Faker::Restaurant.name,
+      name: Faker::Food.dish,
       price: Faker::Commerce.price(range: 0..10.0, as_string: true),
     }
   end

@@ -3,7 +3,7 @@
 RSpec.describe CreateProductJob, type: :job do
   let(:vendor) { create(:vendor) }
   let(:cms_id) { Faker::Alphanumeric.alpha }
-  let(:name) { Faker::Restaurant.name }
+  let(:name) { Faker::Food.dish }
   let(:price) { Faker::Commerce.price(range: 0..10.0, as_string: true) }
   let(:type) { Faker::Restaurant.type }
 
