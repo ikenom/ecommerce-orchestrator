@@ -10,6 +10,6 @@ dependencies:
   version: 0.0.24
 - name: shopify-service
   repository: https://ikenom.github.io/shopify-service
-  version: 0.0.23
-digest: sha256:dbdf4412c654290773f8e8a509b2860786778f7f2b05ca0314c34524676e8891
-generated: "2021-02-25T21:05:53.790494-05:00"
+  version: 0.0.24
+digest: sha256:9b50c9e702093bbb242fa579cf8a94881269224ea4d966256bc316c9d524b2c4
+generated: "2021-02-25T21:54:57.891226-05:00"
