@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class ShopifyProductCreatedConsumer
+class ShopifyVendorCreatedConsumer
   include Hutch::Consumer
-  consume "shopify.product.created"
-  queue_name "consumer_ecommerce_orchestrator_shopify_product_created"
+  consume "shopify.vendor.created"
+  queue_name "consumer_ecommerce_orchestrator_shopify_vendor_created"
 
   def process(message)
     ShopifyEntityCreatedJob.perform_later(

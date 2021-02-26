@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ShopifyProductCreatedConsumer do
+RSpec.describe ShopifyVendorCreatedConsumer do
   let(:message) do
     {
       sender_id: Faker::Alphanumeric.alpha,
@@ -15,7 +15,7 @@ RSpec.describe ShopifyProductCreatedConsumer do
   end
 
   it "should have correct queue name" do
-    expect(described_class.get_queue_name).to eq("consumer_ecommerce_orchestrator_shopify_product_created")
+    expect(described_class.get_queue_name).to eq("consumer_ecommerce_orchestrator_shopify_vendor_created")
   end
 
   it "should enqueue shopify product created job" do

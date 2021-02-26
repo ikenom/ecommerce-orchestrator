@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :vendor do
-    shopify_id { Faker::Alphanumeric.alpha }
+  factory :vendor, class: Vendor, parent: :shopify_entity do
     business_name { Faker::Company.name }
     phone { Faker::PhoneNumber.cell_phone }
     first_name { Faker::Name.first_name }
