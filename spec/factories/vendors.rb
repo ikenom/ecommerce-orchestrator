@@ -6,6 +6,7 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.cell_phone }
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
+    cms_id { Faker::Alphanumeric.alpha }
     user { association :user }
   end
 end
