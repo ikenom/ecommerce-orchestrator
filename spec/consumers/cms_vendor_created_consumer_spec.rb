@@ -22,8 +22,8 @@ RSpec.describe CmsVendorCreatedConsumer do
   it "should enqueue shopify product created job" do
     consumer.process(message)
     expect(CmsVendorCreatedJob).to have_been_enqueued.with({
-                                                          cms_id: message[:cms_id],
-                                                          vendor_id: message[:sender_id]
-                                                        })
+                                                             cms_id: message[:cms_id],
+                                                             vendor_id: message[:sender_id]
+                                                           })
   end
 end

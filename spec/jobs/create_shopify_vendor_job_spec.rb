@@ -26,13 +26,13 @@ RSpec.describe CreateShopifyVendorJob, type: :job do
 
   it "should publish" do
     expect(Hutch).to receive(:publish).with("shopify.vendor.create", {
-      sender_id: vendor.id.to_s,
-      first_name: first_name,
-      last_name: last_name,
-      business_name: business_name,
-      email: vendor.user.email,
-      phone: phone,
-      tags: tags
+                                              sender_id: vendor.id.to_s,
+                                              first_name: first_name,
+                                              last_name: last_name,
+                                              business_name: business_name,
+                                              email: vendor.user.email,
+                                              phone: phone,
+                                              tags: tags
                                             }).exactly(1)
 
     perform

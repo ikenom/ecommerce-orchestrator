@@ -21,19 +21,20 @@ RSpec.describe CreateVendorJob, type: :job do
     perform
     vendor = Vendor.last
     expect(CreateShopifyVendorJob).to have_been_enqueued.with({
-      vendor_id: vendor.id.to_s,
-      first_name: vendor.first_name,
-      last_name: vendor.last_name,
-      business_name: vendor.business_name,
-      email: vendor.user.email,
-      phone: vendor.phone
-                                                         })
+                                                                vendor_id: vendor.id.to_s,
+                                                                first_name: vendor.first_name,
+                                                                last_name: vendor.last_name,
+                                                                business_name: vendor.business_name,
+                                                                email: vendor.user.email,
+                                                                phone: vendor.phone
+                                                              })
   end
 
   it "should enqueue CreateCmsVendorJob" do
     perform
     vendor = Vendor.last
     expect(CreateCmsVendorJob).to have_been_enqueued.with({
-      vendor_id: vendor.id.to_s, business_name: vendor.business_name})
+                                                            vendor_id: vendor.id.to_s, business_name: vendor.business_name
+                                                          })
   end
 end
