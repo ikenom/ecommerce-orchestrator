@@ -6,6 +6,7 @@ RSpec.describe CreateShopifyVendorJob, type: :job do
   let(:last_name) { Faker::Name.last_name }
   let(:business_name) { Faker::Company.name }
   let(:phone) { Faker::PhoneNumber.cell_phone }
+  let(:tags) { [] }
 
   subject(:perform) do
     described_class.perform_now(
@@ -30,7 +31,8 @@ RSpec.describe CreateShopifyVendorJob, type: :job do
       last_name: last_name,
       business_name: business_name,
       email: vendor.user.email,
-      phone: phone
+      phone: phone,
+      tags: tags
                                             }).exactly(1)
 
     perform

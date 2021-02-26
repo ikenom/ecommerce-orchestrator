@@ -11,6 +11,7 @@ class CreateShopifyVendorJob < ApplicationJob
                   last_name: last_name,
                   business_name: business_name,
                   email: email,
-                  phone: phone)
+                  phone: phone,
+                  tags: [])
   end
 end

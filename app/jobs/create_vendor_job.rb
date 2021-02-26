@@ -19,7 +19,7 @@ class CreateVendorJob < ApplicationJob
       last_name: vendor.last_name,
       business_name: vendor.business_name,
       email: vendor.user.email,
-      phone: vendor.phone
+      phone: vendor.phone,
     )
 
     CreateCmsVendorJob.perform_later(vendor_id: vendor.id.to_s, business_name: vendor.business_name)
