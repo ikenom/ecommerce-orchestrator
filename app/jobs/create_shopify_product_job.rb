@@ -1,14 +1,18 @@
+# frozen_string_literal: true
+
 class CreateShopifyProductJob < ApplicationJob
   queue_as :ecommerce_orchestrator_create_shopify_product
 
-  def perform(user_id:, name:, price:, type:, tags:)
+  def perform(product_id:, name:, price:, type:, tags:)
     Hutch.connect
+
+    product = Product.find(product_id)
     Hutch.publish("shopify.product.create",
-      vendor_user_id: user_id,
-      product_type: type,
-      product_name: name,
-      price: price,
-      tags: tags
-    )
+                  sender_id: product_id,
+                  vendor_id: product.vendor.shopify_id,
+                  product_type: type,
+                  product_name: name,
+                  price: price,
+                  tags: tags)
   end
 end
