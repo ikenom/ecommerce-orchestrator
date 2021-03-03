@@ -9,7 +9,7 @@ RSpec.describe CreateProductJob, type: :job do
 
   subject(:perform) do
     described_class.perform_now(
-      vendor_id: vendor.id.to_s,
+      vendor_id: vendor.cms_id,
       cms_id: cms_id,
       price: price,
       name: name,
