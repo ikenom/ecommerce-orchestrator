@@ -24,6 +24,7 @@ RSpec.describe CmsProductCreatedConsumer do
     consumer.process(message)
     expect(CreateProductJob).to have_been_enqueued.with({
                                                           cms_id: message[:cms_id],
+                                                          vendor_id: message[:vendor_id],
                                                           name: message[:name],
                                                           price: message[:price],
                                                           type: message[:type]

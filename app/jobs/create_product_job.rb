@@ -4,7 +4,7 @@ class CreateProductJob < ApplicationJob
   queue_as :ecommerce_orchestrator_create_product
 
   def perform(vendor_id:, cms_id:, name:, price:, type:)
-    vendor = Vendor.find(vendor_id)
+    vendor = Vendor.find_by(cms_id: vendor_id)
     product = Product.create!(cms_id: cms_id, vendor: vendor)
     tags = ["cms_id:#{cms_id}"]
 

@@ -8,6 +8,7 @@ class CmsProductCreatedConsumer
   def process(message)
     CreateProductJob.perform_later(
       cms_id: message[:cms_id],
+      vendor_id: message[:vendor_id],
       name: message[:name],
       price: message[:price],
       type: message[:type]
