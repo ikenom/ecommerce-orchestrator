@@ -7,9 +7,9 @@ dependencies:
   version: 8.6.4
 - name: user-service
   repository: https://ikenom.github.io/user-service
-  version: 0.0.25
+  version: 0.0.26
 - name: shopify-service
   repository: https://ikenom.github.io/shopify-service
-  version: 0.0.26
-digest: sha256:48538ef42221ae44602ae3423236f0d939ecdf499876372ae0359ee7ac8f6dc1
-generated: "2021-03-05T02:38:01.415133-05:00"
+  version: 0.0.27
+digest: sha256:7b0b9a7270dc2dd93c55664d2d0c83584d44c80aa36d47c7d5b1e0628bf991a0
+generated: "2021-03-05T02:52:53.414542-05:00"
